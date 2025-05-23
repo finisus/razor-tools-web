@@ -67,7 +67,7 @@ export default function Home() {
               </Button>
             </Link>
           </div>
-          <h4 className="cursor-default select-none whitespace-nowrap text-end font-serif text-2xl font-medium max-md:text-lg">
+          <h4 className="cursor-default select-none whitespace-nowrap text-end font-serif text-2xl font-medium tracking-tight max-md:text-lg">
             ...you can reach us here
           </h4>
         </div>
@@ -76,7 +76,7 @@ export default function Home() {
         <footer className="flex flex-row items-center justify-between gap-2 px-4 py-2">
           <Link href="https://finisus.dev" target="_blank">
             <span className="text-center text-xs font-medium">
-              Made with love by Finisus
+              Made with love, by Finisus
               <span className="ml-1 dark:hidden">🧡</span>
               <span className="ml-1 hidden dark:inline">💛</span>
             </span>
