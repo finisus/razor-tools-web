@@ -5,7 +5,7 @@ import { Button } from "@/components/ui/button";
 
 export function Navbar() {
   return (
-    <div className="fixed left-0 top-0 flex w-full flex-row items-center gap-0 border-b bg-background/75 p-2 backdrop-blur-sm">
+    <div className="fixed left-0 top-0 z-50 flex w-full flex-row items-center gap-0 border-b bg-background/75 p-2 backdrop-blur-sm">
       <div className="pointer-events-none cursor-default touch-none border opacity-0 max-md:hidden">
         <Button disabled variant="ghost" size="icon" className="h-auto">
           <div className="h-0 w-[1.2rem]"></div>

@@ -1,14 +1,15 @@
 import Link from "next/link";
 import { Button } from "@/components/ui/button";
+import RazorAsciiArt from "@/components/razor-ascii";
 
 export default function Home() {
   return (
     <main className="mt-12 flex min-h-svh w-full flex-col items-stretch justify-start font-sans">
-      <section className="flex h-[75svh] flex-col items-center justify-center py-2">
-        <div className="flex max-w-80 flex-col items-center justify-center px-8 py-8 max-md:max-w-56">
-          {/* add hero image here */}
+      <section className="relative flex h-[75svh] flex-col items-center justify-center py-2">
+        <div className="absolute inset-0 z-10 -translate-y-12">
+          <RazorAsciiArt />
         </div>
-        <h2 className="cursor-default select-none text-center font-serif text-4xl font-medium tracking-tight max-md:text-3xl">
+        <h2 className="pointer-events-none cursor-default select-none text-center font-serif text-4xl font-medium tracking-tight max-md:text-3xl">
           Your personal razor,
           <br />
           <span className="text-3xl max-md:text-2xl">
