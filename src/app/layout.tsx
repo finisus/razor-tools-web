@@ -1,5 +1,4 @@
 import type { Metadata } from "next";
-import localFont from "next/font/local";
 import { Inter, Geist, Geist_Mono, Old_Standard_TT } from "next/font/google";
 import Providers from "@/lib/providers";
 import { Navbar } from "@/components/navbar";
@@ -26,14 +25,9 @@ const OldStandardSerif = Old_Standard_TT({
   weight: ["400", "700"],
 });
 
-const EmilysCandy = localFont({
-  src: "./_fonts/Emilys_Candy/EmilysCandy-Regular.ttf",
-  variable: "--font-emilys-candy",
-});
-
 export const metadata: Metadata = {
   title: "Razor Tools",
-  description: "Your personal toolkit to cut through the trenches.",
+  description: "Your personal razor, that cut through the trenches.",
   icons: [{ rel: "icon", url: "/favicon.ico" }],
 };
 
@@ -45,7 +39,7 @@ export default function RootLayout({
   return (
     <html lang="en" suppressHydrationWarning>
       <body
-        className={`${InterSans.variable} ${GeistSans.variable} ${GeistMono.variable} ${OldStandardSerif.variable} ${EmilysCandy.variable} antialiased`}
+        className={`${InterSans.variable} ${GeistSans.variable} ${GeistMono.variable} ${OldStandardSerif.variable} antialiased`}
       >
         <Providers>
           <Navbar />

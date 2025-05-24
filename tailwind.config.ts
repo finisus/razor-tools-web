@@ -12,7 +12,7 @@ module.exports = {
   theme: {
     extend: {
       fontFamily: {
-        sans: ["var(--font-inter-sans)", ...fontFamily.sans],
+        sans: ["var(--font-geist-sans)", ...fontFamily.sans],
         serif: ["var(--font-oldstandard-serif)", ...fontFamily.serif],
         mono: ["var(--font-geist-mono)", ...fontFamily.mono],
         emilysCandy: ["var(--font-emilys-candy)"],

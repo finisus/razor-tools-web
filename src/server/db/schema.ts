@@ -31,7 +31,7 @@ export const user = createTable("profile", {
   id: uuid("id").primaryKey().notNull(),
   license: text("license").notNull().unique(),
   license_active: boolean("license_active").notNull().default(true),
-  notify: boolean("notify").notNull().default(false),
+  wss_key: text("wss_key"),
   createdAt: timestamp("created_at", { withTimezone: true })
     .default(sql`now()`)
     .notNull(),

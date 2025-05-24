@@ -1,26 +1,35 @@
 import Link from "next/link";
 import { Button } from "@/components/ui/button";
 import RazorAsciiArt from "@/components/razor-ascii";
+import { MoneyIcon } from "@/components/icons/isomorphic";
 
 export default function Home() {
   return (
     <main className="mt-12 flex min-h-svh w-full flex-col items-stretch justify-start font-sans">
       <section className="relative flex h-[75svh] flex-col items-center justify-center py-2">
-        <div className="absolute inset-0 z-10 -translate-y-12">
+        <div className="absolute inset-0 z-10 -translate-y-8">
           <RazorAsciiArt />
         </div>
-        <h2 className="pointer-events-none cursor-default select-none text-center font-serif text-4xl font-medium tracking-tight max-md:text-3xl">
+        <h2 className="pointer-events-none mt-32 cursor-default select-none text-center font-serif text-4xl font-medium tracking-tight max-md:text-3xl">
           Your personal razor,
           <br />
           <span className="text-3xl max-md:text-2xl">
             that cuts through trenches.
           </span>
         </h2>
+        <Link href="/store" className="z-50 mt-8">
+          <Button variant="secondary" size="default">
+            Purchase Today
+          </Button>
+        </Link>
       </section>
 
-      <section className="mx-auto grid grid-cols-2 grid-rows-2 gap-4 pb-16">
-        <Button variant="default" className="">
-          Default button
+      <section
+        id="features"
+        className="mx-auto grid grid-cols-2 grid-rows-2 gap-4 pb-16"
+      >
+        <Button variant="secondary" className="">
+          Something Something
         </Button>
         <Button variant="secondary" className="">
           Secondary button
@@ -31,6 +40,17 @@ export default function Home() {
         <Button variant="link" className="">
           Link button
         </Button>
+      </section>
+
+      <section className="flex flex-col items-center justify-center px-2 py-16">
+        <div className="relative flex h-48 w-48 items-center justify-center">
+          <h2 className="z-50 cursor-default select-none text-center font-serif text-4xl font-medium tracking-tight max-md:text-3xl">
+            Pricing
+          </h2>
+          <div className="absolute left-0 top-0 -z-10 opacity-75 blur-sm">
+            <MoneyIcon width={192} height={192} strokeWidth="1px" />
+          </div>
+        </div>
       </section>
 
       <section id="about" className="py-2">
