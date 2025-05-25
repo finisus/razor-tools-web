@@ -33,7 +33,7 @@ export function Navbar() {
               <MenuItem className="p-0 data-[focused]:bg-secondary/50">
                 <Link
                   className="flex h-full w-full select-none flex-col justify-end rounded-md bg-gradient-to-b from-muted/10 to-muted/50 p-4 no-underline outline-none focus:shadow-md"
-                  href="/#about"
+                  href="/#faq"
                 >
                   <div className="ml-auto">
                     <ExclamationIcon
@@ -44,7 +44,7 @@ export function Navbar() {
                     />
                   </div>
                   <h1 className="mb-0 mt-4 text-start font-serif text-2xl font-medium leading-none tracking-tight">
-                    About
+                    FAQ
                   </h1>
                 </Link>
               </MenuItem>
