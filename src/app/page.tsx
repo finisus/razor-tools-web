@@ -139,7 +139,7 @@ export default function Home() {
         </div>
       </section>
 
-      <section className="select-none px-2 py-16">
+      <section id="pricing" className="select-none px-2 py-16">
         <div className="container mx-auto max-w-80 space-y-4">
           <h2 className="cursor-default text-center font-serif text-4xl font-medium tracking-tight max-md:text-3xl">
             Pricing
@@ -211,7 +211,7 @@ export default function Home() {
       </section>
 
       {/* TODO: Write a better more original About content */}
-      <section id="faq" className="select-none px-2 pb-8 pt-16">
+      <section id="faq" className="select-none px-2 py-16">
         <div className="container mx-auto">
           <div className="relative mx-auto max-w-[768px] overflow-hidden rounded-xl max-md:w-80">
             <Card className="bg-card/50 px-4 py-0 backdrop-blur-sm dark:bg-card/75">
@@ -247,7 +247,7 @@ export default function Home() {
           </div>
         </div>
       </section>
-      <section id="contact" className="select-none px-2 pb-16 pt-8">
+      <section id="contact" className="select-none px-2 py-16">
         <div className="container mx-auto flex max-w-[640px] flex-col gap-2">
           <div className="ml-auto mr-auto flex w-fit flex-row items-center justify-center gap-3">
             <Link href="" target="_blank">
