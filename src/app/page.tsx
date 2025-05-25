@@ -10,14 +10,15 @@ export default function Home() {
         <div className="absolute inset-0 z-10 -translate-y-8">
           <RazorAsciiArt />
         </div>
-        <h2 className="pointer-events-none mt-32 cursor-default select-none text-center font-serif text-4xl font-medium tracking-tight max-md:text-3xl">
+        <h2 className="pointer-events-none relative mt-32 cursor-default select-none text-center font-serif text-4xl font-medium tracking-tight max-md:text-3xl">
           Your personal razor,
           <br />
           <span className="text-3xl max-md:text-2xl">
             that cuts through trenches.
           </span>
+          <div className="absolute left-1/2 top-1/2 -z-10 hidden h-16 w-64 -translate-x-1/2 -translate-y-1/2 rounded-full bg-primary/50 blur-3xl dark:inline-block"></div>
         </h2>
-        <Link href="/store" className="z-50 mt-8">
+        <Link href="/store" className="z-20 mt-8">
           <Button variant="secondary" size="default">
             Purchase Today
           </Button>
@@ -44,7 +45,7 @@ export default function Home() {
 
       <section className="flex flex-col items-center justify-center px-2 py-16">
         <div className="relative flex h-48 w-48 items-center justify-center">
-          <h2 className="z-50 cursor-default select-none text-center font-serif text-4xl font-medium tracking-tight max-md:text-3xl">
+          <h2 className="z-0 cursor-default select-none text-center font-serif text-4xl font-medium tracking-tight max-md:text-3xl">
             Pricing
           </h2>
           <div className="absolute left-0 top-0 -z-10 opacity-75 blur-sm">
