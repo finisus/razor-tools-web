@@ -1,5 +1,14 @@
 import Link from "next/link";
+import Image from "next/image";
 import { Button } from "@/components/ui/button";
+import {
+  Card,
+  CardHeader,
+  CardTitle,
+  CardDescription,
+  CardContent,
+  CardFooter,
+} from "@/components/ui/card";
 import RazorAsciiArt from "@/components/razor-ascii";
 import { MoneyIcon } from "@/components/icons/isomorphic";
 
@@ -19,7 +28,11 @@ export default function Home() {
           <div className="absolute left-1/2 top-1/2 -z-10 hidden h-16 w-64 -translate-x-1/2 -translate-y-1/2 rounded-full bg-primary/50 blur-3xl max-md:w-52 dark:inline-block"></div>
         </h2>
         <Link href="/store" className="z-20 mt-8">
-          <Button variant="secondary" size="default">
+          <Button
+            variant="secondary"
+            size="default"
+            className="relative border dark:animate-gradientBorder dark:border-transparent dark:[background:linear-gradient(45deg,hsl(var(--secondary)),hsl(var(--secondary))_50%,hsl(var(--secondary)))_padding-box,conic-gradient(from_var(--gradient-border-angle),hsl(var(--secondary))_80%,_hsl(var(--primary)/0.75)_86%,_hsl(var(--primary))_90%,_hsl(var(--primary)/0.75)_94%,_hsl(var(--primary)/0.48))_border-box]"
+          >
             Purchase Today
           </Button>
         </Link>
@@ -27,29 +40,163 @@ export default function Home() {
 
       <section
         id="features"
-        className="mx-auto grid grid-cols-2 grid-rows-2 gap-4 pb-16"
+        className="mx-auto grid w-[976px] grid-cols-3 grid-rows-2 gap-2 px-2 py-16 max-lg:w-[736px] max-md:w-full max-md:max-w-80 max-md:grid-flow-row max-md:grid-cols-1 max-md:gap-4"
       >
-        <Button variant="secondary" className="">
-          Something Something
-        </Button>
-        <Button variant="secondary" className="">
-          Secondary button
-        </Button>
-        <Button variant="outline" className="">
-          Outline button
-        </Button>
-        <Button variant="link" className="">
-          Link button
-        </Button>
+        <Card className="flex flex-col justify-between bg-card">
+          <CardHeader>
+            <CardTitle>Volume Simulation & Bump Bot</CardTitle>
+            <CardDescription>
+              Keep your token active with simulated trading volume or run bump
+              bot to push your token to the top at minimal cost.
+            </CardDescription>
+          </CardHeader>
+          <CardContent>
+            <Image
+              src="/temp_grids.png"
+              width={670}
+              height={428}
+              alt="temp1"
+              className="h-[200px] rounded-md object-cover"
+            ></Image>
+          </CardContent>
+        </Card>
+        <Card className="flex flex-col justify-between bg-card">
+          <CardHeader>
+            <CardTitle>Shill Comments</CardTitle>
+            <CardDescription>
+              Post tailored messages on specific pumpfun boards, KOTH/active
+              tokens, or all fresh launches.
+            </CardDescription>
+          </CardHeader>
+          <CardContent>
+            <Image
+              src="/temp_grids.png"
+              width={670}
+              height={428}
+              alt="temp1"
+              className="h-[200px] rounded-md object-cover"
+            ></Image>
+          </CardContent>
+        </Card>
+        <Card className="flex flex-col justify-between bg-card">
+          <CardHeader>
+            <CardTitle>Vanity Address Generation</CardTitle>
+            <CardDescription>
+              Generate specialized custom wallets and contract addresses.
+            </CardDescription>
+          </CardHeader>
+          <CardContent>
+            <Image
+              src="/temp_grids.png"
+              width={670}
+              height={428}
+              alt="temp1"
+              className="h-[200px] rounded-md object-cover"
+            ></Image>
+          </CardContent>
+        </Card>
+        <Card className="flex flex-col justify-between bg-card">
+          <CardHeader>
+            <CardTitle>Bundler Bot</CardTitle>
+            <CardDescription>
+              Bundle on launch or bundle any token across mutiple sub-wallets
+              without triggering platform flags.
+            </CardDescription>
+          </CardHeader>
+          <CardContent>
+            <Image
+              src="/temp_grids.png"
+              width={670}
+              height={428}
+              alt="temp1"
+              className="h-[200px] rounded-md object-cover"
+            ></Image>
+          </CardContent>
+        </Card>
+        <Card className="relative col-span-2 flex flex-col justify-between rounded-2xl border backdrop-blur-md max-md:col-span-1 dark:animate-gradientBorder dark:border-transparent dark:[background:linear-gradient(45deg,hsl(var(--card)),hsl(var(--card))_50%,hsl(var(--card)))_padding-box,conic-gradient(from_var(--gradient-border-angle),hsl(var(--border))_80%,_hsl(var(--primary)/0.75)_86%,_hsl(var(--primary))_90%,_hsl(var(--primary)/0.75)_94%,_hsl(var(--primary)/0.48))_border-box]">
+          <CardHeader>
+            <CardTitle>Intuitive & Expressive UI</CardTitle>
+            <CardDescription>
+              Out platform is built by traders and designers for other traders.
+              Enjoy a clean and easy-to-use layout that looks good at the same
+              time.
+            </CardDescription>
+          </CardHeader>
+          <CardContent>
+            <Image
+              src="/temp_grids.png"
+              width={670}
+              height={428}
+              alt="temp1"
+              className="h-[200px] rounded-md object-cover"
+            ></Image>
+          </CardContent>
+        </Card>
       </section>
 
-      <section className="flex flex-col items-center justify-center px-2 py-16">
-        <div className="relative flex h-48 w-48 items-center justify-center">
-          <h2 className="z-0 cursor-default select-none text-center font-serif text-4xl font-medium tracking-tight max-md:text-3xl">
-            Pricing
-          </h2>
-          <div className="absolute left-0 top-0 -z-10 opacity-75 blur-sm">
-            <MoneyIcon width={192} height={192} strokeWidth="1px" />
+      <section className="mx-auto w-full max-w-80 space-y-4 px-2 py-16">
+        <h2 className="cursor-default select-none text-center font-serif text-4xl font-medium tracking-tight max-md:text-3xl">
+          Pricing
+        </h2>
+        <div className="relative flex flex-row items-center justify-center gap-2 overflow-hidden rounded-xl">
+          <Card className="bg-card/75 backdrop-blur-sm">
+            <CardHeader>
+              <CardTitle className="text-3xl max-md:text-2xl">1 sol</CardTitle>
+              <CardDescription>Per month</CardDescription>
+            </CardHeader>
+            <CardContent>
+              <ul className="opacity-75">
+                <li className="text-xs">Volume Bot</li>
+                <li className="text-xs">Bump Bot</li>
+                <li className="text-xs">Comments Bot</li>
+                <li className="text-xs">Bundler Bot</li>
+                <li className="text-xs">Vanity Address Generator</li>
+                <li className="text-xs">...& much more</li>
+              </ul>
+            </CardContent>
+            <CardFooter>
+              <Button
+                variant="outline"
+                size="default"
+                className="bg-transparent"
+              >
+                Purchase
+              </Button>
+            </CardFooter>
+          </Card>
+          <Card className="bg-card/50 backdrop-blur-sm dark:bg-card/75">
+            <CardHeader>
+              <CardTitle className="text-3xl max-md:text-2xl">
+                9
+                <sup className="font-normal">
+                  <s>12</s>
+                </sup>
+                &nbsp;sol
+              </CardTitle>
+              <CardDescription>Per year</CardDescription>
+            </CardHeader>
+            <CardContent>
+              <ul className="opacity-75">
+                <li className="text-xs">Volume Bot</li>
+                <li className="text-xs">Bump Bot</li>
+                <li className="text-xs">Comments Bot</li>
+                <li className="text-xs">Bundler Bot</li>
+                <li className="text-xs">Vanity Address Generator</li>
+                <li className="text-xs">...& much more</li>
+              </ul>
+            </CardContent>
+            <CardFooter>
+              <Button
+                variant="secondary"
+                size="default"
+                className="relative border dark:animate-gradientBorder dark:border-transparent dark:[background:linear-gradient(45deg,hsl(var(--secondary)),hsl(var(--secondary))_50%,hsl(var(--secondary)))_padding-box,conic-gradient(from_var(--gradient-border-angle),hsl(var(--secondary))_80%,_hsl(var(--primary)/0.75)_86%,_hsl(var(--primary))_90%,_hsl(var(--primary)/0.75)_94%,_hsl(var(--primary)/0.48))_border-box]"
+              >
+                Purchase
+              </Button>
+            </CardFooter>
+          </Card>
+          <div className="absolute right-0 top-1/2 -z-10 -translate-y-1/2 translate-x-32 opacity-100">
+            <MoneyIcon width={256} height={256} />
           </div>
         </div>
       </section>

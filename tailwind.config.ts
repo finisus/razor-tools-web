@@ -65,8 +65,12 @@ module.exports = {
         caret:
           "typewriter 1.75s steps(35) 0.25s forwards, blink 1s steps(35) infinite 2s",
         dominos: "dominos 1s ease infinite",
+        gradientBorder: "gradient-border 4s linear infinite",
       },
       keyframes: {
+        "gradient-border": {
+          to: { "--gradient-border-angle": "360deg" },
+        },
         "sun-moon": {
           "0%": {
             transform: "scale(1)",

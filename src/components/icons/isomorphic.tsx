@@ -23,7 +23,7 @@ export const MoneyIcon = ({
   ...rest
 }: IsoIconProps) => {
   const [mounted, setMounted] = useState(false);
-  const { theme } = useTheme();
+  const { resolvedTheme } = useTheme();
 
   useEffect(() => {
     setMounted(true);
@@ -33,8 +33,8 @@ export const MoneyIcon = ({
     return null;
   }
 
-  const currentFill = theme === "dark" ? fillDark : fillLight;
-  const currentStroke = theme === "dark" ? strokeDark : strokeLight;
+  const currentFill = resolvedTheme === "dark" ? fillDark : fillLight;
+  const currentStroke = resolvedTheme === "dark" ? strokeDark : strokeLight;
 
   return (
     <svg
@@ -108,7 +108,7 @@ export const ExclamationIcon = ({
   ...rest
 }: IsoIconProps) => {
   const [mounted, setMounted] = useState(false);
-  const { theme } = useTheme();
+  const { resolvedTheme } = useTheme();
 
   useEffect(() => {
     setMounted(true);
@@ -118,8 +118,8 @@ export const ExclamationIcon = ({
     return null;
   }
 
-  const currentFill = theme === "dark" ? fillDark : fillLight;
-  const currentStroke = theme === "dark" ? strokeDark : strokeLight;
+  const currentFill = resolvedTheme === "dark" ? fillDark : fillLight;
+  const currentStroke = resolvedTheme === "dark" ? strokeDark : strokeLight;
 
   return (
     <svg
@@ -173,7 +173,7 @@ export const PersonIcon = ({
   ...rest
 }: IsoIconProps) => {
   const [mounted, setMounted] = useState(false);
-  const { theme } = useTheme();
+  const { resolvedTheme } = useTheme();
 
   useEffect(() => {
     setMounted(true);
@@ -183,8 +183,8 @@ export const PersonIcon = ({
     return null;
   }
 
-  const currentFill = theme === "dark" ? fillDark : fillLight;
-  const currentStroke = theme === "dark" ? strokeDark : strokeLight;
+  const currentFill = resolvedTheme === "dark" ? fillDark : fillLight;
+  const currentStroke = resolvedTheme === "dark" ? strokeDark : strokeLight;
 
   return (
     <svg
@@ -233,7 +233,7 @@ export const LocationHomeIcon = ({
   ...rest
 }: IsoIconProps) => {
   const [mounted, setMounted] = useState(false);
-  const { theme } = useTheme();
+  const { resolvedTheme } = useTheme();
 
   useEffect(() => {
     setMounted(true);
@@ -243,8 +243,8 @@ export const LocationHomeIcon = ({
     return null;
   }
 
-  const currentFill = theme === "dark" ? fillDark : fillLight;
-  const currentStroke = theme === "dark" ? strokeDark : strokeLight;
+  const currentFill = resolvedTheme === "dark" ? fillDark : fillLight;
+  const currentStroke = resolvedTheme === "dark" ? strokeDark : strokeLight;
 
   return (
     <svg
@@ -308,7 +308,7 @@ export const KeyboardDoubleArrowUpIcon = ({
   ...rest
 }: IsoIconProps) => {
   const [mounted, setMounted] = useState(false);
-  const { theme } = useTheme();
+  const { resolvedTheme } = useTheme();
 
   useEffect(() => {
     setMounted(true);
@@ -318,8 +318,8 @@ export const KeyboardDoubleArrowUpIcon = ({
     return null;
   }
 
-  const currentFill = theme === "dark" ? fillDark : fillLight;
-  const currentStroke = theme === "dark" ? strokeDark : strokeLight;
+  const currentFill = resolvedTheme === "dark" ? fillDark : fillLight;
+  const currentStroke = resolvedTheme === "dark" ? strokeDark : strokeLight;
 
   return (
     <svg
@@ -388,7 +388,7 @@ export const NearMeIcon = ({
   ...rest
 }: IsoIconProps) => {
   const [mounted, setMounted] = useState(false);
-  const { theme } = useTheme();
+  const { resolvedTheme } = useTheme();
 
   useEffect(() => {
     setMounted(true);
@@ -398,8 +398,8 @@ export const NearMeIcon = ({
     return null;
   }
 
-  const currentFill = theme === "dark" ? fillDark : fillLight;
-  const currentStroke = theme === "dark" ? strokeDark : strokeLight;
+  const currentFill = resolvedTheme === "dark" ? fillDark : fillLight;
+  const currentStroke = resolvedTheme === "dark" ? strokeDark : strokeLight;
 
   return (
     <svg

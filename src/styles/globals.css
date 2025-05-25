@@ -113,3 +113,9 @@ body {
     @apply bg-background text-foreground;
   }
 }
+
+@property --gradient-border-angle {
+  inherits: false;
+  initial-value: 0deg;
+  syntax: "<angle>";
+}
