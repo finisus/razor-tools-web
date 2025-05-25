@@ -13,15 +13,19 @@ import { HomeIcon } from "lucide-react";
 
 export function Navbar() {
   return (
-    <div className="fixed left-0 top-0 z-50 flex w-full flex-row items-center gap-0 border-b bg-background/75 p-2 backdrop-blur-sm">
+    <div className="fixed left-0 top-0 z-50 flex w-full flex-row items-center gap-0 border-b-[0.5px] bg-background/75 p-2 backdrop-blur-sm">
       <Link href="/">
-        <Button variant="outline" size="icon">
+        <Button variant="outline" size="icon" className="bg-transparent">
           <HomeIcon className="h-[1.2rem] w-[1.2rem]" strokeWidth={1.5} />
         </Button>
       </Link>
       <div className="ml-2 mr-auto flex flex-row items-center justify-center gap-2">
         <MenuTrigger>
-          <Button variant="outline" size="sm" className="!text-sm">
+          <Button
+            variant="outline"
+            size="sm"
+            className="bg-transparent !text-sm"
+          >
             Getting started
           </Button>
           <MenuPopover className="w-80 bg-background/75 p-0 backdrop-blur-sm">
@@ -104,7 +108,11 @@ export function Navbar() {
         </MenuTrigger>
 
         <Link href="/#features" passHref>
-          <Button variant="outline" size="sm" className="!text-sm">
+          <Button
+            variant="outline"
+            size="sm"
+            className="bg-transparent !text-sm"
+          >
             Features
           </Button>
         </Link>

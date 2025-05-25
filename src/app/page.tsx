@@ -16,7 +16,7 @@ export default function Home() {
           <span className="text-3xl max-md:text-2xl">
             that cuts through trenches.
           </span>
-          <div className="absolute left-1/2 top-1/2 -z-10 hidden h-16 w-64 -translate-x-1/2 -translate-y-1/2 rounded-full bg-primary/50 blur-3xl dark:inline-block"></div>
+          <div className="absolute left-1/2 top-1/2 -z-10 hidden h-16 w-64 -translate-x-1/2 -translate-y-1/2 rounded-full bg-primary/50 blur-3xl max-md:w-52 dark:inline-block"></div>
         </h2>
         <Link href="/store" className="z-20 mt-8">
           <Button variant="secondary" size="default">

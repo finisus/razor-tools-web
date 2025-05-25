@@ -20,7 +20,12 @@ export function ThemeToggle() {
 
   return (
     <MenuTrigger>
-      <Button aria-label="Theme Toggle" variant="outline" size="icon">
+      <Button
+        aria-label="Theme Toggle"
+        variant="outline"
+        size="icon"
+        className="bg-transparent"
+      >
         <Sun
           strokeWidth={1.5}
           className="h-[1.2rem] w-[1.2rem] rotate-0 scale-100 transition-all dark:-rotate-90 dark:scale-0"
