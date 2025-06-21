@@ -10,9 +10,7 @@ const DynamicThemeToggle = dynamic(
     ssr: false,
     loading: () => (
       <div className="pointer-events-none cursor-default touch-none opacity-0 max-md:hidden">
-        <Button isDisabled variant="ghost" size="icon" className="h-auto">
-          <div className="h-0 w-[1.2rem]"></div>
-        </Button>
+        <Button isDisabled variant="ghost" size="icon_sm" className="h-0" />
       </div>
     ),
   },

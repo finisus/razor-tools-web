@@ -1,34 +1,34 @@
 import type { Metadata } from "next";
-import { Inter, Geist, Geist_Mono, Old_Standard_TT } from "next/font/google";
+import {
+  Public_Sans,
+  Old_Standard_TT,
+  Spline_Sans_Mono,
+} from "next/font/google";
 import Providers from "@/lib/providers";
 import { Navbar } from "@/components/navbar";
 import "@/styles/globals.css";
 
-const InterSans = Inter({
-  variable: "--font-inter-sans",
+const publicSans = Public_Sans({
+  variable: "--font-public-sans",
   subsets: ["latin"],
 });
 
-const GeistSans = Geist({
-  variable: "--font-geist-sans",
-  subsets: ["latin"],
-});
-
-const GeistMono = Geist_Mono({
-  variable: "--font-geist-mono",
-  subsets: ["latin"],
-});
-
-const OldStandardSerif = Old_Standard_TT({
+const oldStandardSerif = Old_Standard_TT({
   variable: "--font-oldstandard-serif",
   subsets: ["latin"],
   weight: ["400", "700"],
 });
 
+const splineMono = Spline_Sans_Mono({
+  variable: "--font-spline-mono",
+  subsets: ["latin"],
+  weight: ["300", "400", "500", "600", "700"],
+});
+
 export const metadata: Metadata = {
   title: "Razor Tools",
   description: "Your personal razor, that cut through the trenches.",
-  icons: [{ rel: "icon", url: "/favicon.ico" }],
+  authors: [{ name: "Finisus", url: "https://finisus.dev" }],
 };
 
 export default function RootLayout({
@@ -39,7 +39,7 @@ export default function RootLayout({
   return (
     <html lang="en" suppressHydrationWarning>
       <body
-        className={`${InterSans.variable} ${GeistSans.variable} ${GeistMono.variable} ${OldStandardSerif.variable} antialiased`}
+        className={` ${publicSans.variable} ${oldStandardSerif.variable} ${splineMono.variable} antialiased`}
       >
         <Providers>
           <Navbar />
