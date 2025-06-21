@@ -22,26 +22,29 @@ export function ThemeToggle() {
     <MenuTrigger>
       <Button
         aria-label="Theme Toggle"
-        variant="outline"
-        size="icon"
+        variant="ghost"
+        size="icon_sm"
         className="bg-transparent"
       >
         <Sun
-          strokeWidth={1.5}
-          className="h-[1.2rem] w-[1.2rem] rotate-0 scale-100 transition-all dark:-rotate-90 dark:scale-0"
+          size={16}
+          strokeWidth={2.5}
+          className="scale-100 rotate-0 transition-all dark:scale-0 dark:-rotate-90"
         />
         <Moon
-          strokeWidth={1.5}
-          className="absolute h-[1.2rem] w-[1.2rem] rotate-90 scale-0 transition-all dark:rotate-0 dark:scale-100"
+          size={16}
+          strokeWidth={2.5}
+          className="absolute scale-0 rotate-90 transition-all dark:scale-100 dark:rotate-0"
         />
         <span className="sr-only">Toggle theme</span>
       </Button>
-      <MenuPopover className="p-0">
+      <MenuPopover className="border-border p-0">
         <Menu className="p-1">
           <MenuItem
             onAction={() => setTheme("light")}
             className={cn(
-              theme === "light" && "font-bold text-accent-foreground underline",
+              theme === "light" &&
+                "text-accent-foreground font-semibold underline",
             )}
           >
             Light
@@ -49,7 +52,8 @@ export function ThemeToggle() {
           <MenuItem
             onAction={() => setTheme("dark")}
             className={cn(
-              theme === "dark" && "font-bold text-accent-foreground underline",
+              theme === "dark" &&
+                "text-accent-foreground font-semibold underline",
             )}
           >
             Dark
@@ -58,7 +62,7 @@ export function ThemeToggle() {
             onAction={() => setTheme("system")}
             className={cn(
               theme === "system" &&
-                "font-bold text-accent-foreground underline",
+                "text-accent-foreground font-semibold underline",
             )}
           >
             System

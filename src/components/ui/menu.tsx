@@ -1,9 +1,10 @@
+"use client";
+
 /**
  * Modified Shadcn+JollyUI Menu component.
  * Fixes the scrollbar dissapearing issue.
  * Fixes the click outside to close.
  */
-"use client";
 import * as React from "react";
 import {
   CheckIcon,
@@ -88,7 +89,7 @@ function MenuPopover({ className, ...props }: PopoverProps) {
 const Menu = <T extends object>({ className, ...props }: AriaMenuProps<T>) => (
   <AriaMenu
     className={cn(
-      "max-h-[inherit] overflow-auto rounded-md p-1 outline outline-0 [clip-path:inset(0_0_0_0_round_calc(var(--radius)-2px))]",
+      "max-h-[inherit] overflow-auto rounded-md p-1 outline-0 [clip-path:inset(0_0_0_0_round_calc(var(--radius)-2px))]",
       className,
     )}
     {...props}
@@ -102,7 +103,7 @@ const MenuItem = ({ children, className, ...props }: AriaMenuItemProps) => (
     }
     className={composeRenderProps(className, (className) =>
       cn(
-        "relative flex cursor-pointer select-none items-center gap-2 rounded-sm px-2 py-1.5 text-sm outline-none transition-colors",
+        "relative flex cursor-pointer items-center gap-2 rounded-sm px-2 py-1.5 text-sm transition-colors outline-none select-none",
         /* Disabled */
         "data-[disabled]:pointer-events-none data-[disabled]:opacity-50",
         /* Focused */
@@ -154,7 +155,7 @@ const MenuHeader = ({
     className={cn(
       "px-3 py-1.5 text-sm font-semibold",
       inset && "pl-8",
-      separator && "-mx-1 mb-1 border-b border-b-border pb-2.5",
+      separator && "border-b-border -mx-1 mb-1 border-b pb-2.5",
       className,
     )}
     {...props}
@@ -163,7 +164,7 @@ const MenuHeader = ({
 
 const MenuSeparator = ({ className, ...props }: AriaSeparatorProps) => (
   <AriaSeparator
-    className={cn("-mx-1 my-1 h-px bg-muted", className)}
+    className={cn("bg-muted -mx-1 my-1 h-px", className)}
     {...props}
   />
 );

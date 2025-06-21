@@ -15,7 +15,6 @@ import {
   DisclosureGroupStateContext,
   Heading,
 } from "react-aria-components";
-
 import { cn } from "@/utils/cn";
 
 export interface DisclosureProps extends AriaDisclosureProps {
@@ -30,7 +29,7 @@ function Disclosure({ children, className, ...props }: DisclosureProps) {
       className={composeRenderProps(className, (className, _renderProps) =>
         cn(
           "group min-w-64",
-          isInGroup && "border-0 border-b last:border-b-0",
+          isInGroup && "border-border border-0 border-b last:border-b-0",
           className,
         ),
       )}
@@ -52,9 +51,9 @@ function DisclosureHeader({ children, className }: DisclosureHeaderProps) {
         slot="trigger"
         className={composeRenderProps(className, (className) => {
           return cn(
-            "group flex flex-1 items-center justify-between rounded-md py-4 text-sm font-medium ring-offset-background transition-all hover:underline",
+            "group ring-offset-background flex flex-1 cursor-pointer items-center justify-between rounded-md py-4 text-sm font-medium transition-all hover:underline",
             "data-[disabled]:pointer-events-none data-[disabled]:opacity-50",
-            "data-[focus-visible]:outline-none data-[focus-visible]:ring-2 data-[focus-visible]:ring-ring data-[focus-visible]:ring-offset-2",
+            "data-[focus-visible]:ring-ring data-[focus-visible]:ring-2 data-[focus-visible]:ring-offset-2 data-[focus-visible]:outline-none",
             "outline-none",
             className,
           );
@@ -64,7 +63,7 @@ function DisclosureHeader({ children, className }: DisclosureHeaderProps) {
         <ChevronDownIcon
           aria-hidden
           className={cn(
-            "size-4 shrink-0 text-muted-foreground transition-transform duration-200",
+            "text-muted-foreground size-4 shrink-0 transition-transform duration-200",
             "group-data-[expanded]:rotate-180",
             "group-data-[disabled]:opacity-50",
           )}
@@ -88,7 +87,7 @@ function DisclosurePanel({
       {...props}
       className={"overflow-hidden text-sm transition-all"}
     >
-      <div className={cn("pb-4 pt-0", className)}>{children}</div>
+      <div className={cn("pt-0 pb-4", className)}>{children}</div>
     </AriaDisclosurePanel>
   );
 }

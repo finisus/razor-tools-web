@@ -1,6 +1,63 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+@import "tailwindcss";
+
+@custom-variant dark (&:where([data-theme=dark], [data-theme=dark] *));
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --font-sans:
+    var(--font-public-sans), ui-sans-serif, system-ui, sans-serif, Arial,
+    Helvetica, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol",
+    "Noto Color Emoji";
+  --font-serif:
+    var(--font-oldstandard-serif), ui-serif, Georgia, Cambria,
+    "Times New Roman", Times, serif;
+  --font-mono:
+    var(--font-spline-mono), ui-monospace, SFMono-Regular, Menlo, Monaco,
+    Consolas, "Liberation Mono", "Courier New", monospace;
+  --color-sidebar-ring: var(--sidebar-ring);
+  --color-sidebar-border: var(--sidebar-border);
+  --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
+  --color-sidebar-accent: var(--sidebar-accent);
+  --color-sidebar-primary-foreground: var(--sidebar-primary-foreground);
+  --color-sidebar-primary: var(--sidebar-primary);
+  --color-sidebar-foreground: var(--sidebar-foreground);
+  --color-sidebar: var(--sidebar);
+  --color-chart-5: var(--chart-5);
+  --color-chart-4: var(--chart-4);
+  --color-chart-3: var(--chart-3);
+  --color-chart-2: var(--chart-2);
+  --color-chart-1: var(--chart-1);
+  --color-ring: var(--ring);
+  --color-input: var(--input);
+  --color-border: var(--border);
+  --color-destructive: var(--destructive);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-accent: var(--accent);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-muted: var(--muted);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-secondary: var(--secondary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-primary: var(--primary);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-popover: var(--popover);
+  --color-card-foreground: var(--card-foreground);
+  --color-card: var(--card);
+  --radius-lg: var(--radius);
+  --radius-md: calc(var(--radius) - 2px);
+  --radius-sm: calc(var(--radius) - 4px);
+}
+
+/*
+* NOTE: Font style guide:
+*
+* Monospace Tracking: 
+*   text-lg -> tracking-tigher
+*   text-base -> tracking-tight
+*   text-sm -> tracking-normal
+*   text-xs -> tracking-wide
+*/
 
 * {
   transition-property: background-color;
@@ -51,71 +108,129 @@ html {
 }
 
 body {
-  font-family: Arial, Helvetica, sans-serif;
+  background: var(--background);
+  color: var(--foreground);
+  /* Default fonts for the html, we can't use tailwind vars here */
+  font-family:
+    var(--font-public-sans), ui-sans-serif, system-ui, sans-serif, Arial,
+    Helvetica, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol",
+    "Noto Color Emoji";
   overflow-x: hidden;
   overflow-y: auto;
   padding: 0;
   margin: 0;
+  min-height: 100svh;
 }
 
 @layer base {
   :root {
-    --background: 150 33% 99%;
-    --foreground: 154 12% 12%;
-    --card: 150 14% 97%;
-    --card-foreground: 154 12% 12%;
-    --popover: 150 14% 97%;
-    --popover-foreground: 154 12% 12%;
-    --primary: 167 70% 72%;
-    --primary-foreground: 0 0% 13%;
-    --secondary: 165 67% 87%;
-    --secondary-foreground: 171 51% 17%;
-    --muted: 140 5% 88%;
-    --muted-foreground: 154 12% 12%;
-    --accent: 160 10% 94%;
-    --accent-foreground: 154 12% 12%;
-    --destructive: 0 84.2% 60.2%;
-    --destructive-foreground: 0 0% 98%;
-    --border: 150 4% 80%;
-    --input: 150 4% 80%;
-    --ring: 167 70% 72%;
     --radius: 0.5rem;
+
+    /* Button Glow Animation ported over from juxtaposed's og masterpiece */
+    /* default colors from juxtaposed */
+    /* --glowAnimCol1: #ff6565; */
+    /* --glowAnimCol2: #ff64f9; */
+    /* --glowAnimCol3: #6b5fff; */
+    /* --glowAnimCol4: #4d8aff; */
+    /* --glowAnimCol5: #5bff89; */
+    /* --glowAnimCol6: #ffee55; */
+    /* --glowAnimCol7: #ff6d1b; */
+
+    --glowAnimScaling: 1rem;
+    --glowAnimBg1: var(--accent);
+    --glowAnimCol1: #ff6565;
+    --glowAnimCol2: #ff64f9;
+    --glowAnimCol3: #6b5fff;
+    --glowAnimCol4: #4d8aff;
+    --glowAnimCol5: #5bff89;
+    --glowAnimCol6: #ffee55;
+    --glowAnimCol7: #ff6d1b;
+
+    /* JollyUI teal */
+    --background: hsl(150 33% 99%);
+    --foreground: hsl(154 12% 12%);
+    --card: hsl(150 14% 97%);
+    --card-foreground: hsl(154 12% 12%);
+    --popover: hsl(150 14% 97%);
+    --popover-foreground: hsl(154 12% 12%);
+    --primary: hsl(167 70% 72%);
+    --primary-foreground: hsl(0 0% 13%);
+    --secondary: hsl(165 67% 87%);
+    --secondary-foreground: hsl(171 51% 17%);
+    --muted: hsl(140 5% 88%);
+    --muted-foreground: hsl(154 12% 12%);
+    --accent: hsl(160 10% 94%);
+    --accent-foreground: hsl(154 12% 12%);
+    --destructive: hsl(0 84.2% 60.2%);
+    --destructive-foreground: hsl(0 0% 98%);
+    --border: hsl(150 4% 80%);
+    --input: hsl(150 4% 80%);
+    --ring: hsl(167 70% 72%);
+
+    /* Custom chart colors teal */
+    --chart-1: hsl(167 70% 72%);
+    --chart-2: hsl(167 48% 50%);
+    --chart-3: hsl(167 47% 40%);
+    --chart-4: hsl(167 46% 30%);
+    --chart-5: hsl(167 20% 20%);
+
+    /* Shadcn zinc */
+    --sidebar: oklch(0.985 0 0);
+    --sidebar-foreground: oklch(0.141 0.005 285.823);
+    --sidebar-primary: oklch(0.623 0.214 259.815);
+    --sidebar-primary-foreground: oklch(0.97 0.014 254.604);
+    --sidebar-accent: oklch(0.967 0.001 286.375);
+    --sidebar-accent-foreground: oklch(0.21 0.006 285.885);
+    --sidebar-border: oklch(0.92 0.004 286.32);
+    --sidebar-ring: oklch(0.623 0.214 259.815);
   }
 
-  [data-mode="dark"] {
-    --background: 150 6% 7%;
-    --foreground: 150 6% 93%;
-    --card: 150 4% 9%;
-    --card-foreground: 150 6% 93%;
-    --popover: 150 4% 9%;
-    --popover-foreground: 150 6% 93%;
-    --primary: 167 70% 72%;
-    --primary-foreground: 0 0% 13%;
-    --secondary: 178 100% 11%;
-    --secondary-foreground: 156 71% 86%;
-    --muted: 160 3% 19%;
-    --muted-foreground: 150 6% 93%;
-    --accent: 150 3% 13%;
-    --accent-foreground: 150 6% 93%;
-    --destructive: 0 84.2% 60.2%;
-    --destructive-foreground: 0 0% 98%;
-    --border: 156 4% 28%;
-    --input: 156 4% 28%;
-    --ring: 167 70% 72%;
+  [data-theme="dark"] {
+    /* JollyUI teal */
+    --background: hsl(150 6% 7%);
+    --foreground: hsl(150 6% 93%);
+    --card: hsl(150 4% 9%);
+    --card-foreground: hsl(150 6% 93%);
+    --popover: hsl(150 4% 9%);
+    --popover-foreground: hsl(150 6% 93%);
+    --primary: hsl(167 70% 72%);
+    --primary-foreground: hsl(0 0% 13%);
+    --secondary: hsl(178 100% 11%);
+    --secondary-foreground: hsl(156 71% 86%);
+    --muted: hsl(160 3% 19%);
+    --muted-foreground: hsl(150 6% 93%);
+    --accent: hsl(150 3% 13%);
+    --accent-foreground: hsl(150 6% 93%);
+    --destructive: hsl(0 84.2% 60.2%);
+    --destructive-foreground: hsl(0 0% 98%);
+    --border: hsl(156 4% 28%);
+    --input: hsl(156 4% 28%);
+    --ring: hsl(167 70% 72%);
+
+    /* Custom chart colors teal */
+    --chart-1: hsl(167 70% 72%);
+    --chart-2: hsl(167 61% 47%);
+    --chart-3: hsl(167 54% 40%);
+    --chart-4: hsl(167 47% 33%);
+    --chart-5: hsl(167 40% 26%);
+
+    /* Shadcn zinc */
+    --sidebar: oklch(0.21 0.006 285.885);
+    --sidebar-foreground: oklch(0.985 0 0);
+    --sidebar-primary: oklch(0.546 0.245 262.881);
+    --sidebar-primary-foreground: oklch(0.379 0.146 265.522);
+    --sidebar-accent: oklch(0.274 0.006 286.033);
+    --sidebar-accent-foreground: oklch(0.985 0 0);
+    --sidebar-border: oklch(1 0 0 / 10%);
+    --sidebar-ring: oklch(0.488 0.243 264.376);
   }
 }
 
-@layer base {
-  * {
-    @apply border-border;
+@keyframes buttonGlowAnim {
+  0% {
+    background-position: 0;
   }
-  body {
-    @apply bg-background text-foreground;
+  100% {
+    background-position: 200%;
   }
-}
-
-@property --gradient-border-angle {
-  inherits: false;
-  initial-value: 0deg;
-  syntax: "<angle>";
 }

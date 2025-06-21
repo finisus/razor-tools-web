@@ -1,14 +1,11 @@
 "use client";
 
 import { useEffect, useState } from "react";
-import { QueryClientProvider } from "@tanstack/react-query";
-import { ReactQueryDevtools } from "@tanstack/react-query-devtools";
-import { getQueryClient } from "@/utils/get-query-client";
-import { ThemeProvider, useTheme } from "next-themes";
-import { Toaster, ToasterProps } from "react-hot-toast";
+import { ThemeProvider } from "next-themes";
+import { Toaster, ToasterProps } from "sonner";
+import { LoaderCircleIcon, CheckIcon, InfoIcon, XIcon } from "lucide-react";
 
 const ThemedToaster = (props: ToasterProps) => {
-  const { theme } = useTheme();
   const [mounted, setMounted] = useState(false);
 
   useEffect(() => {
@@ -19,42 +16,75 @@ const ThemedToaster = (props: ToasterProps) => {
     return null;
   }
 
-  const isDark = theme === "dark";
-
   return (
     <Toaster
+      containerAriaLabel="toast-notification"
       position="bottom-center"
-      reverseOrder={false}
-      gutter={12}
-      containerStyle={{ fontSize: "15px" }}
+      expand={false}
+      visibleToasts={3}
+      closeButton={false}
+      offset={32}
+      mobileOffset={24}
+      gap={12}
+      duration={4000}
       toastOptions={{
-        // Global default opts
-        className: "",
-        duration: 5000,
-        removeDelay: 1000,
         style: {
-          maxWidth: "256px",
-          background: `${isDark ? "#ecd6c633" : "#26262633"}`,
-          backdropFilter: "blur(12px)",
-          WebkitBackdropFilter: "blur(12px)",
-          borderRadius: "12px",
-          border: `1px solid ${isDark ? "#ecd6c633" : "#26262633"}`,
-          paddingTop: "3px",
-          paddingBottom: "3px",
-          paddingLeft: "15px",
-          paddingRight: "15px",
-          fontFamily: "var(--font-figtree-sans)",
-          fontWeight: "500",
-          color: `${isDark ? "#ecd6c6" : "#262626"}`,
+          background: "var(--background)/0.75",
+          backdropFilter: "blur(4px)",
+          WebkitBackdropFilter: "blur(4px)",
+          borderRadius: "var(--radius)",
+          border: "1px solid var(--border)",
+          paddingTop: "10px",
+          paddingBottom: "12px",
+          paddingLeft: "12px",
+          paddingRight: "12px",
+          fontSize: 14,
+          fontFamily: "var(--font-spline-mono)",
+          fontWeight: "400",
+          color: "var(--foreground)",
         },
-        // Default opts for specific types (success, error, loading, custom)
-        success: {
-          duration: 3000,
-          icon: "✅",
-        },
-        error: {
-          icon: "‼️",
-        },
+      }}
+      icons={{
+        loading: (
+          <div className="ml-1">
+            <LoaderCircleIcon
+              size={16}
+              strokeWidth={2.5}
+              className="animate-spin"
+              color="var(--foreground)"
+            />
+          </div>
+        ),
+        success: (
+          <div className="ml-1">
+            <CheckIcon
+              size={16}
+              strokeWidth={2.5}
+              className="transition-all ease-in-out"
+              color="var(--secondary-foreground)"
+            />
+          </div>
+        ),
+        info: (
+          <div className="ml-1">
+            <InfoIcon
+              size={16}
+              strokeWidth={2.5}
+              className="transition-all ease-in-out"
+              color="var(--foreground)"
+            />
+          </div>
+        ),
+        error: (
+          <div className="ml-1">
+            <XIcon
+              size={16}
+              strokeWidth={2.5}
+              className="transition-all ease-in-out"
+              color="var(--destructive)"
+            />
+          </div>
+        ),
       }}
       {...props}
     />
@@ -62,15 +92,10 @@ const ThemedToaster = (props: ToasterProps) => {
 };
 
 export default function Providers({ children }: { children: React.ReactNode }) {
-  const queryClient = getQueryClient();
-
   return (
-    <QueryClientProvider client={queryClient}>
-      <ThemeProvider attribute="data-mode" defaultTheme="system" enableSystem>
-        {children}
-        <ReactQueryDevtools />
-        <ThemedToaster />
-      </ThemeProvider>
-    </QueryClientProvider>
+    <ThemeProvider attribute="data-theme" defaultTheme="system" enableSystem>
+      {children}
+      <ThemedToaster />
+    </ThemeProvider>
   );
 }

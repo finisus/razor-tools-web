@@ -97,7 +97,8 @@ class AsciiFilter {
     this.domElement.appendChild(this.pre);
 
     this.canvas = document.createElement("canvas");
-    this.context = this.canvas.getContext("2d", { willReadFrequently: true });
+    // NOTE: willReadFrequently changed to false
+    this.context = this.canvas.getContext("2d", { willReadFrequently: false });
     // this.context = this.canvas.getContext("2d");
     this.domElement.appendChild(this.canvas);
 
@@ -247,7 +248,8 @@ class CanvasTxt {
     }: CanvasTxtOptions = {},
   ) {
     this.canvas = document.createElement("canvas");
-    this.context = this.canvas.getContext("2d", { willReadFrequently: true });
+    // NOTE: willReadFrequently changed to false
+    this.context = this.canvas.getContext("2d", { willReadFrequently: false });
     // this.context = this.canvas.getContext("2d");
     this.txt = txt;
     this.fontSize = fontSize;
