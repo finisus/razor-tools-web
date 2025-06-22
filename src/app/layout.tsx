@@ -5,7 +5,7 @@ import {
   Spline_Sans_Mono,
 } from "next/font/google";
 import Providers from "@/lib/providers";
-import { Navbar } from "@/components/navbar";
+import Navbar from "@/components/navbar";
 import "@/styles/globals.css";
 
 const publicSans = Public_Sans({
@@ -43,11 +43,11 @@ export default function RootLayout({
   return (
     <html lang="en" suppressHydrationWarning>
       <body
-        className={` ${publicSans.variable} ${oldStandardSerif.variable} ${splineMono.variable} antialiased`}
+        className={`${publicSans.variable} ${oldStandardSerif.variable} ${splineMono.variable} antialiased`}
       >
         <Providers>
-          <Navbar />
           {children}
+          <Navbar />
         </Providers>
       </body>
     </html>

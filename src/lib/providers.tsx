@@ -1,11 +1,11 @@
 "use client";
 
 import { useEffect, useState } from "react";
-import { ThemeProvider } from "next-themes";
 import { Toaster, ToasterProps } from "sonner";
+import { ThemeProvider } from "next-themes";
 import { LoaderCircleIcon, CheckIcon, InfoIcon, XIcon } from "lucide-react";
 
-const ThemedToaster = (props: ToasterProps) => {
+export function ThemedToaster(props: ToasterProps) {
   const [mounted, setMounted] = useState(false);
 
   useEffect(() => {
@@ -89,7 +89,7 @@ const ThemedToaster = (props: ToasterProps) => {
       {...props}
     />
   );
-};
+}
 
 export default function Providers({ children }: { children: React.ReactNode }) {
   return (

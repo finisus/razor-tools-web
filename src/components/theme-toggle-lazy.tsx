@@ -4,8 +4,9 @@ import dynamic from "next/dynamic";
 import React from "react";
 import { Button } from "@/components/ui/button";
 
-const DynamicThemeToggle = dynamic(
-  () => import("@/components/theme-toggle").then((mod) => mod.ThemeToggle),
+const ThemeToggle = dynamic(
+  () =>
+    import("@/components/theme-toggle").then((module) => module.ThemeToggle),
   {
     ssr: false,
     loading: () => (
@@ -16,6 +17,6 @@ const DynamicThemeToggle = dynamic(
   },
 );
 
-export function ThemeToggleWrapper() {
-  return <DynamicThemeToggle />;
+export function ThemeToggleLazy() {
+  return <ThemeToggle />;
 }

@@ -8,7 +8,7 @@
     "**/*.cjs",
     "**/*.js", 
     ".next/types/**/*.ts",
-    "src/utils/env.js"
+    "src/utils/env.js",
   ],
 
   "exclude": ["node_modules"],
