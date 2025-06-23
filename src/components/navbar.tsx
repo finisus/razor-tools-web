@@ -1,5 +1,4 @@
 import Link from "next/link";
-import * as React from "react";
 import { Menu, MenuItem, MenuPopover, MenuTrigger } from "@/components/ui/menu";
 import { Button } from "@/components/ui/button";
 import { ThemeToggleLazy } from "@/components/theme-toggle-lazy";
@@ -13,7 +12,7 @@ import { HomeIcon } from "lucide-react";
 
 export default function Navbar() {
   return (
-    <div className="bg-background/75 border-border fixed top-0 left-0 z-50 flex w-full flex-row items-center gap-0 border-b-[0px] px-2 py-0 backdrop-blur-xs">
+    <div className="bg-background/75 border-border fixed top-0 left-0 z-50 flex w-full flex-row items-center gap-0 border-b-[0px] px-3 py-0 backdrop-blur-xs">
       <Link href="/">
         <Button variant="ghost" size="icon_sm" className="bg-transparent">
           <HomeIcon size={14} strokeWidth={2.5} />

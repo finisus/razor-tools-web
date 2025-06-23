@@ -30,7 +30,7 @@ export const metadata: Metadata = {
   description: "Your personal razor, that cuts through the trenches.",
   authors: [{ name: "Finisus", url: "https://finisus.dev" }],
   other: {
-    "apple-mobile-web-app-capable": "yes",
+    "mobile-web-app-capable": "yes",
     "apple-mobile-web-app-status-bar-style": "black-translucent",
   },
 };
